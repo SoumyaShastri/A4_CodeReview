@@ -112,3 +112,5 @@ range(ufo6$duration_seconds) # Very large range of seconds
 
 hist(log(ufo6$duration_seconds), main = "Histogram of Sighting Durations in Seconds", xlab = "Log of sighting duration (seconds)", ylab = "Frequency", col = "blue")
 
+#*Code Review by Soumya Shastri 
+#*Please see branch "Code-Review" for detailed comments
