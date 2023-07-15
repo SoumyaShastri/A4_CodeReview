@@ -112,5 +112,43 @@ range(ufo6$duration_seconds) # Very large range of seconds
 
 hist(log(ufo6$duration_seconds), main = "Histogram of Sighting Durations in Seconds", xlab = "Log of sighting duration (seconds)", ylab = "Frequency", col = "blue")
 
-#*Code Review by Soumya Shastri 
-#*Please see branch "Code-Review" for detailed comments
+
+#*Comments by Soumya Shastri: 
+
+#*Line 8: Nice choice in package; "readr" provides a fast and friendly way to read 
+#*csv files in R.  
+#*Line 9-10: Great! I would recommend letting the user know to have the file in 
+#*their working directory or adding the csv file to your submission. Regardless, 
+#*I was able to open the file. 
+#*Line 12: Prompt works, and upon reading the dataframe, the space has been effectively 
+#*replaced with an underscore. Another way is by using the "make.names" function 
+#*which replaces any spaces with "."
+#*Line 17-22: Excellent! This works as it should. Double checking that all the missing 
+#*shape values have been actually replaced with "unknown" was also a great add. 
+#*Line 25-30: This works as it should, there are no N/A values in the country column. One
+#*way to make the code a little more efficient and concise would be to make use of the pipe
+#*operator more frequently to sequence the operations within one single variable instead of 
+#*creating a ufo2 variable. 
+#*Line 33-59: both date columns have been formatted and they both respect the same formatting. 
+#*I like how you chose to separate the time out of the column entirely as it makes it cleaner for 
+#*further analysis. It is also good practice on checking the class of variables before you manipulate
+#*the data in any way, great work on that! Another quick way of getting the same results is 
+#*by using the "as.date" function which requires no additional packages. 
+#*Line 64-66: Great use of regex to capture all the possible values for "Hoax", that is something 
+#*I didn't think about. 
+#*Line 70-74: Great work again, the table shows all the data outlined in the requirements 
+#*Line 79-82: I like how your "report_delay" column specifies that the difference is in days. 
+#*Line 85-88: This works as it should. The only comment I would have is that at this point, there are a 
+#*lot of data in the Global Environment, which could be avoided if the pipe operator was used a 
+#*more throughout the code, condensing it to maybe 1 or 2 data frames. 
+#*Line 91-94: Table generated fulfills assignment requirements. Again, it's good that you have units 
+#*of measurement within the table as without a unit, the quantity is meaningless to end user.
+#*Line 98-104: Great analysis, you looked for missing and negative values. You also correctly pointed out 
+#*the large range in duration seconds. And although that is well accounted for in the histogram, a point to 
+#*consider is if it even makes sense to keep such large values in your analysis. Some of those times 
+#*span years, can a UFO sighting be seen for years on end? 
+
+#*Overall, excellent work! All prompts were answered and they worked as they should. I would recommend 
+#*making use of the pipe function more which would avoid repetitive lines 
+#*in your code such as creating new variables for sightly changed data and make it overall more concise. 
+#*Otherwise, it was a pleasure reviewing your code. Well done!
